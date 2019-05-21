@@ -6,7 +6,7 @@
         <Projects Include="Bowling.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="C:\Users\Developer\Documents\Embarcadero\Studio\Projects\BowlingGameTest.dproj">
+        <Projects Include="BowlingGameTest.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -27,13 +27,13 @@
         <MSBuild Projects="Bowling.dproj" Targets="Make"/>
     </Target>
     <Target Name="BowlingGameTest">
-        <MSBuild Projects="C:\Users\Developer\Documents\Embarcadero\Studio\Projects\BowlingGameTest.dproj"/>
+        <MSBuild Projects="BowlingGameTest.dproj"/>
     </Target>
     <Target Name="BowlingGameTest:Clean">
-        <MSBuild Projects="C:\Users\Developer\Documents\Embarcadero\Studio\Projects\BowlingGameTest.dproj" Targets="Clean"/>
+        <MSBuild Projects="BowlingGameTest.dproj" Targets="Clean"/>
     </Target>
     <Target Name="BowlingGameTest:Make">
-        <MSBuild Projects="C:\Users\Developer\Documents\Embarcadero\Studio\Projects\BowlingGameTest.dproj" Targets="Make"/>
+        <MSBuild Projects="BowlingGameTest.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
         <CallTarget Targets="Bowling;BowlingGameTest"/>
