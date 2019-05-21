@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{7224E75C-2FF6-454B-94BA-39A4E2C707D2}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Bowling.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Users\Developer\Documents\Embarcadero\Studio\Projects\BowlingGameTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Bowling">
+        <MSBuild Projects="Bowling.dproj"/>
+    </Target>
+    <Target Name="Bowling:Clean">
+        <MSBuild Projects="Bowling.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Bowling:Make">
+        <MSBuild Projects="Bowling.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BowlingGameTest">
+        <MSBuild Projects="C:\Users\Developer\Documents\Embarcadero\Studio\Projects\BowlingGameTest.dproj"/>
+    </Target>
+    <Target Name="BowlingGameTest:Clean">
+        <MSBuild Projects="C:\Users\Developer\Documents\Embarcadero\Studio\Projects\BowlingGameTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BowlingGameTest:Make">
+        <MSBuild Projects="C:\Users\Developer\Documents\Embarcadero\Studio\Projects\BowlingGameTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Bowling;BowlingGameTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Bowling:Clean;BowlingGameTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Bowling:Make;BowlingGameTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
